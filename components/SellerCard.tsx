@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
   productsGrid: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginLeft: 16,
   },
   productItem: {
     width: '30%',

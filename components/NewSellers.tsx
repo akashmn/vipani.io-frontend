@@ -2,7 +2,7 @@ import React from 'react';
 import { View, ScrollView, StyleSheet, Dimensions, Image } from 'react-native';
 
 const { width } = Dimensions.get('window');
-const CARD_WIDTH = width * 0.6;
+const CARD_WIDTH = width * 0.7;
 
 export default function NewSellers() {
   const images = [
@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 20,
     overflow: 'hidden', // Ensure rounded corners work for images
+    marginLeft: 15,
   },
   image: {
     width: '100%',
