@@ -5,19 +5,29 @@ type SellerCardProps = {
   name: string;
   product: string;
   avatar: any; // Image source for avatar
-  productImages: any[]; // Array of image sources for the product grid
+  productImages?: any[]; // Optional prop (array of images for product grid)
 };
 
-export default function SellerCard({ name, product, avatar, productImages }: SellerCardProps) {
+export default function SellerCard({
+  name,
+  product,
+  avatar,
+  productImages = [], // Default to empty array if not passed
+}: SellerCardProps) {
   return (
     <View style={styles.card}>
       <Image source={avatar} style={styles.avatar} />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.product}>{product}</Text>
       <View style={styles.productsGrid}>
-        {productImages.slice(0, 3).map((image, index) => (
-          <Image key={index} source={image} style={styles.productItem} />
-        ))}
+        {/* Check if productImages array is not empty before rendering */}
+        {productImages.length > 0 ? (
+          productImages.slice(0, 3).map((image, index) => (
+            <Image key={index} source={image} style={styles.productItem} />
+          ))
+        ) : (
+          <Text style={styles.noImagesText}>No products available</Text> // Optional message if no images
+        )}
       </View>
     </View>
   );
@@ -59,5 +69,11 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderRadius: 5,
     resizeMode: 'cover',
+  },
+  noImagesText: {
+    textAlign: 'center',
+    color: '#666',
+    fontSize: 12,
+    marginTop: 10,
   },
 });

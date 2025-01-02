@@ -21,7 +21,7 @@ export default function NewSellers() {
     >
       {images.map((image, index) => (
         <View key={index} style={styles.card}>
-          <Image source={image} style={styles.image} />
+          <Image key={index} source={image} style={styles.image} />
         </View>
       ))}
     </ScrollView>
