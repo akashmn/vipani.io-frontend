@@ -19,14 +19,21 @@ export default function HomeScreen() {
 
         <View style={styles.bannerContainer}>
           <Text style={styles.sectionTitle}>banners/offers</Text>
-          <View style={styles.banner} />
+          <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+            <View style={styles.banner} />
+            <View style={styles.banner} />
+            <View style={styles.banner} />
+          </ScrollView>
         </View>
 
         <View style={styles.categoriesContainer}>
           <Text style={styles.sectionTitle}>categories</Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={true}>
             <View style={[styles.categoryCircle, { backgroundColor: '#4CAF50' }]} />
             <View style={[styles.categoryCircle, { backgroundColor: '#E91E63' }]} />
+            <View style={[styles.categoryCircle, { backgroundColor: '#795548' }]} />
+            <View style={[styles.categoryCircle, { backgroundColor: '#2196F3' }]} />
+            <View style={[styles.categoryCircle, { backgroundColor: '#3F51B5' }]} />
             <View style={[styles.categoryCircle, { backgroundColor: '#795548' }]} />
             <View style={[styles.categoryCircle, { backgroundColor: '#2196F3' }]} />
             <View style={[styles.categoryCircle, { backgroundColor: '#3F51B5' }]} />
@@ -73,6 +80,7 @@ const styles = StyleSheet.create({
   },
   banner: {
     height: 150,
+    width: 300,
     backgroundColor: '#40E0D0',
     borderRadius: 10,
   },
