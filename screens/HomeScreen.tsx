@@ -31,14 +31,14 @@ export default function HomeScreen() {
         <View style={styles.categoriesContainer}>
           <Text style={styles.sectionTitle}>categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={true}>
-            <View style={[styles.categoryCircle, { backgroundColor: '#4CAF50' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#E91E63' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#795548' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#2196F3' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#3F51B5' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#795548' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#2196F3' }]} />
-            <View style={[styles.categoryCircle, { backgroundColor: '#3F51B5' }]} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat1.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat2.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat3.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat4.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat5.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat6.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat7.jpeg')} />
+            <Image style={styles.categoryCircle} source={require('../static/images/cat8.jpeg')} />
           </ScrollView>
         </View>
 
