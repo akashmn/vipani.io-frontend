@@ -44,12 +44,12 @@ export default function HomeScreen() {
 
         <View style={styles.newArrivalsContainer}>
           <Text style={styles.sectionTitle}>New Arrivals</Text>
-          <View style={styles.gridContainer}>
-            <View style={styles.gridItem} />
-            <View style={styles.gridItem} />
-            <View style={styles.gridItem} />
-            <View style={styles.gridItem} />
-          </View>
+          <ScrollView contentContainerStyle={styles.gridContainer}>
+            <Image style={styles.gridItem} source={require('../static/images/new1.jpeg')} />
+            <Image style={styles.gridItem} source={require('../static/images/new2.jpeg')} />
+            <Image style={styles.gridItem} source={require('../static/images/new3.jpeg')} />
+            <Image style={styles.gridItem} source={require('../static/images/new4.jpeg')} />
+          </ScrollView>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 12,
+    marginRight: 8,
   },
   newArrivalsContainer: {
     padding: 16,
