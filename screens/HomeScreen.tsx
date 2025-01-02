@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function HomeScreen() {
+  
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>

@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import { View, ScrollView, StyleSheet, Dimensions, Image } from 'react-native';
 
 const { width } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.6;
 
 export default function NewSellers() {
-  const colors = ['#4CAF50', '#E91E63', '#2196F3', '#795548'];
+  const images = [
+    require('../static/images/sellers1.jpeg'),
+    require('../static/images/sellers2.jpeg'),
+    require('../static/images/sellers3.jpeg'),
+    require('../static/images/sellers4.jpeg'),
+  ];
 
   return (
     <ScrollView 
@@ -14,11 +19,10 @@ export default function NewSellers() {
       pagingEnabled
       snapToInterval={CARD_WIDTH + 10}
     >
-      {colors.map((color, index) => (
-        <View
-          key={index}
-          style={[styles.card, { backgroundColor: color }]}
-        />
+      {images.map((image, index) => (
+        <View key={index} style={styles.card}>
+          <Image source={image} style={styles.image} />
+        </View>
       ))}
     </ScrollView>
   );
@@ -30,5 +34,11 @@ const styles = StyleSheet.create({
     height: 200,
     marginRight: 10,
     borderRadius: 20,
+    overflow: 'hidden', // Ensure rounded corners work for images
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover', // Ensure the image covers the card area
   },
 });
