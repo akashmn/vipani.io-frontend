@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -19,10 +19,12 @@ export default function HomeScreen() {
 
         <View style={styles.bannerContainer}>
           <Text style={styles.sectionTitle}>banners/offers</Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={true}>
-            <View style={styles.banner} />
-            <View style={styles.banner} />
-            <View style={styles.banner} />
+          <ScrollView style={styles.bannerSection} horizontal showsHorizontalScrollIndicator={true}>
+            <Image style={styles.banner} source={require('../static/images/image1.jpeg')} />
+            <Image style={styles.banner} source={require('../static/images/image2.jpg')} />
+            <Image style={styles.banner} source={require('../static/images/image3.jpeg')} />
+            <Image style={styles.banner} source={require('../static/images/image4.jpeg')} />
+            <Image style={styles.banner} source={require('../static/images/image5.jpg')} />
           </ScrollView>
         </View>
 
@@ -78,11 +80,18 @@ const styles = StyleSheet.create({
   bannerContainer: {
     padding: 16,
   },
+  bannerSection: {
+    flexDirection: 'row',
+    marginTop: 12,
+    gap: 12,
+  },
   banner: {
-    height: 150,
+    height: 170,
     width: 300,
     backgroundColor: '#40E0D0',
     borderRadius: 10,
+    marginRight: 8,
+    resizeMode: 'cover',
   },
   sectionTitle: {
     fontSize: 18,
