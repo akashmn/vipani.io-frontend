@@ -1,20 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 type SellerCardProps = {
   name: string;
   product: string;
+  avatar: any; // Image source for avatar
+  productImages: any[]; // Array of image sources for the product grid
 };
 
-export default function SellerCard({ name, product }: SellerCardProps) {
+export default function SellerCard({ name, product, avatar, productImages }: SellerCardProps) {
   return (
     <View style={styles.card}>
-      <View style={styles.avatar} />
+      <Image source={avatar} style={styles.avatar} />
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.product}>{product}</Text>
       <View style={styles.productsGrid}>
-        {[1, 2, 3].map((item) => (
-          <View key={item} style={styles.productItem} />
+        {productImages.slice(0, 3).map((image, index) => (
+          <Image key={index} source={image} style={styles.productItem} />
         ))}
       </View>
     </View>
@@ -33,9 +35,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#FFF',
     alignSelf: 'center',
     marginBottom: 10,
+    resizeMode: 'cover',
   },
   name: {
     textAlign: 'center',
@@ -55,6 +57,7 @@ const styles = StyleSheet.create({
   productItem: {
     width: '30%',
     aspectRatio: 1,
-    backgroundColor: '#FFF',
+    borderRadius: 5,
+    resizeMode: 'cover',
   },
 });

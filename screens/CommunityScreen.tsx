@@ -10,9 +10,6 @@ export default function CommunityScreen() {
   const [currentPage, setCurrentPage] = useState(0);
   const sellers = [
     { name: 'sellers name', product: 'main product' },
-    { name: 'sellers name', product: 'main product' },
-    { name: 'sellers name', product: 'main product' },
-    { name: 'sellers name', product: 'main product' },
   ];
 
   return (
@@ -31,10 +28,15 @@ export default function CommunityScreen() {
         <View style={styles.sellersGrid}>
           {sellers.map((seller, index) => (
             <SellerCard
-              key={index}
-              name={seller.name}
-              product={seller.product}
-            />
+            name="Prasanth PP"
+            product="Spices"
+            avatar={require('../static/images/sellerAvatar1.jpeg')}
+            productImages={[
+              require('../static/images/sellerimages11.jpeg'),
+              require('../static/images/sellerimages12.jpeg'),
+              require('../static/images/sellerimages13.jpeg'),
+            ]}
+          />
           ))}
         </View>
       </ScrollView>
