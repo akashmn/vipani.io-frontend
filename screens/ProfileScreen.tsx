@@ -24,7 +24,7 @@ export default function ProfileScreen() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <ProfileHeader
-          fullName="Full Name"
+          fullName="Akash M Nandan"
           userId="7356531419"
           userType="Consumer"
           onEdit={() => {}}

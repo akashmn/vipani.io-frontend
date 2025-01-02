@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   name: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
   },
   searchIcon: {
@@ -122,5 +122,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2E8B57',
     borderRadius: 10,
     marginBottom: 16,
+    borderWidth: 1,
+    elevation: 2,
   },
 });
