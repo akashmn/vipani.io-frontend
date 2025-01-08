@@ -5,6 +5,13 @@ import { Ionicons } from '@expo/vector-icons';
 import NewSellers from '../components/NewSellers';
 import Pagination from '../components/Pagination';
 import SellerCard from '../components/SellerCard';
+import DP from '../components/ProfilePic';
+
+const DPItem = {
+  title: 'Profile',
+  onPress: () => console.log('DP Pressed'),
+  imageSource: require('../static/images/dp.jpg'),
+};
 
 export default function CommunityScreen() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -17,7 +24,10 @@ export default function CommunityScreen() {
       <ScrollView>
         <View style={styles.header}>
           <Text style={styles.title}>Community Pages</Text>
-          <Ionicons name="search" size={24} color="black" />
+          <View style={styles.rightSection}>
+            <Ionicons name="search" size={24} color="black" />
+            <DP item={DPItem} isConsumer={true} />
+          </View>
         </View>
 
         <Text style={styles.sectionTitle}>New Sellers In Town</Text>
@@ -53,12 +63,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 16,
+    padding: 10,
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
   },
+  rightSection: {
+    flexDirection: 'row',   
+    justifyContent: 'flex-end', 
+    alignItems: 'center',  
+},
   sectionTitle: {
     fontSize: 18,
     fontWeight: 'bold',
