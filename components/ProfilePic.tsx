@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View,Image, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import SellerScreen from "../screens/SellerScreen";
 
 type DPItem = {
     title: string;
@@ -11,13 +13,19 @@ type dpprops = {
     isConsumer: boolean;
 };
 
+
 export default function dp({ item, isConsumer }: dpprops) {
     const[showDP, setshowDP] = useState(isConsumer);
+    const navigation = useNavigation();
+
+    const handlePress = () => {
+      navigation.navigate(SellerScreen);
+  };
 
     return (
         <View style={styles.container}>
         { showDP && (
-            <TouchableOpacity onPress={item.onPress} style={styles.dpButton}>
+            <TouchableOpacity onPress={handlePress} style={styles.dpButton}>
                 <Image source={require('../static/images/dp.jpg')} style={styles.dpImage}></Image>
             </TouchableOpacity>
         )}

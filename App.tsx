@@ -2,11 +2,16 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+
+// main
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
 import InboxScreen from './screens/InboxScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import CartScreen from './screens/CartScreen';
+
+// level 0 pages
+import SellerScreen from './screens/SellerScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,6 +54,7 @@ export default function App() {
         <Tab.Screen name="Inbox" component={InboxScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
         <Tab.Screen name="Cart" component={CartScreen} />
+        <Tab.Screen name='SellerScreen' component={SellerScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
