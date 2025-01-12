@@ -19,7 +19,7 @@ export default function dp({ item, isConsumer }: dpprops) {
     const navigation = useNavigation();
 
     const handlePress = () => {
-      navigation.navigate(SellerScreen);
+      navigation.navigate('SellerScreen');
   };
 
     return (
