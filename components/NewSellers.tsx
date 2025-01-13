@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 
 const { width, height } = Dimensions.get('window');
 const CARD_WIDTH = width * 0.7;
@@ -92,15 +93,9 @@ export default function NewSellers() {
           <View style={styles.modalContainer}>
             {selectedSeller && (
               <ScrollView>
-                <TouchableOpacity
-                  onPress={() => {
-                  console.log('Close button pressed');
-                  setModalVisible(false);
-                }}
-                style={styles.closeButton}
-                activeOpacity={0.7}
-                >
-                  <Text style={styles.closeButtonText}>X</Text>
+                <TouchableOpacity style={styles.button}>
+                <SimpleLineIcons name="user-follow" size={24} color="#fff" />
+                <Text style={styles.buttonText}></Text>
                 </TouchableOpacity>
               <View style={styles.topSection}>
                 <Image
@@ -239,17 +234,17 @@ const styles = StyleSheet.create({
     color: '#666',
     marginTop: 10,
   },
-  closeButton: {
+  button: {
     position: 'absolute',
     top: 10,
     right: 10,
-    backgroundColor: '#D9D9D9',
+    backgroundColor: '#5E7EFF',
     padding: 8,
     borderRadius: 10,
     marginTop:20,
     zIndex: 30,
   },
-  closeButtonText: {
+  buttonText: {
     color: '#fff',
     fontSize: 14,
     fontWeight: 'bold',
