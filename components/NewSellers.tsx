@@ -93,8 +93,12 @@ export default function NewSellers() {
             {selectedSeller && (
               <ScrollView>
                 <TouchableOpacity
-                  onPress={() => setModalVisible(false)}
-                  style={styles.closeButton}
+                  onPress={() => {
+                  console.log('Close button pressed');
+                  setModalVisible(false);
+                }}
+                style={styles.closeButton}
+                activeOpacity={0.7}
                 >
                   <Text style={styles.closeButtonText}>X</Text>
                 </TouchableOpacity>
@@ -152,21 +156,24 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 150,
+    height: '100%',
     resizeMode: 'cover',
   },
   modalBackground: {
     flex: 1,
     justifyContent: 'flex-end',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    zIndex: 10,
   },
   modalContainer: {
-    height: height * 0.5, 
+    height: height * 0.6, 
     backgroundColor: '#fff',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     paddingHorizontal: 20,
     paddingVertical: 10,
+    pointerEvents: 'auto',
+    zIndex: 20,
   },
   topSection: {
     marginTop:20,
@@ -216,7 +223,7 @@ const styles = StyleSheet.create({
   productGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   productImage: {
     width: '30%',
@@ -239,7 +246,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#D9D9D9',
     padding: 8,
     borderRadius: 10,
-    marginTop:20
+    marginTop:20,
+    zIndex: 30,
   },
   closeButtonText: {
     color: '#fff',
