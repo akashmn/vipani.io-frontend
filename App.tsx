@@ -9,8 +9,10 @@ import CommunityScreen from './screens/CommunityScreen';
 import InboxScreen from './screens/InboxScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import CartScreen from './screens/CartScreen';
-
-// level 0 pages
+import ContactUsScreen from './screens/ContactUsScreen';
+import PreviousOrdersScreen from './screens/PreviousOrdersScreen';
+import WishlistScreen from './screens/WishlistScreen';
+import ChatScreen from './screens/ChatScreen';
 import SellerScreen from './screens/SellerScreen';
 
 const Tab = createBottomTabNavigator();
@@ -52,9 +54,13 @@ export default function App() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Community" component={CommunityScreen} />
         <Tab.Screen name="Inbox" component={InboxScreen} />
+        <Tab.Screen name="Chat" component={ChatScreen} options={{ tabBarButton: () => null }} />
         <Tab.Screen name="Profile" component={ProfileScreen} />
         <Tab.Screen name="Cart" component={CartScreen} />
-        <Tab.Screen name='SellerScreen' component={SellerScreen} />
+        <Tab.Screen name="ContactUs" component={ContactUsScreen} options={{ tabBarButton: () => null }} />
+        <Tab.Screen name="PreviousOrders" component={PreviousOrdersScreen} options={{ tabBarButton: () => null }} />
+        <Tab.Screen name="Wishlist" component={WishlistScreen} options={{ tabBarButton: () => null }}  />
+        <Tab.Screen name='SellerScreen' component={SellerScreen} options={{ tabBarButton: () => null }}/>
       </Tab.Navigator>
     </NavigationContainer>
   );

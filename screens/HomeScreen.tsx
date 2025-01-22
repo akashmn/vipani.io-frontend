@@ -11,7 +11,7 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>hello,</Text>
-            <Text style={styles.name}>akash m nandan</Text>
+            <Text style={styles.name}>stephy sam</Text>
           </View>
           <View style={styles.searchIcon}>
             <Ionicons name="search" size={24} color="black" />
