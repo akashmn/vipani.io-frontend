@@ -8,16 +8,17 @@ type MenuItem = {
 
 type ProfileMenuProps = {
   items: MenuItem[];
+  navigation: any;  // Accept navigation prop
 };
 
-export default function ProfileMenu({ items }: ProfileMenuProps) {
+export default function ProfileMenu({ items, navigation }: ProfileMenuProps) {
   return (
     <View style={styles.container}>
       {items.map((item, index) => (
         <TouchableOpacity
           key={index}
           style={styles.menuItem}
-          onPress={item.onPress}
+          onPress={() => item.onPress()} // Execute the onPress function passed from ProfileScreen
         >
           <Text style={styles.menuText}>{item.title}</Text>
         </TouchableOpacity>

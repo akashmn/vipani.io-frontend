@@ -4,13 +4,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileHeader from '../components/ProfileHeader';
 import ProfileMenu from '../components/ProfileMenu';
 import RecentlyViewed from '../components/RecentlyViewed';
+import PreviousOrdersScreen from './PreviousOrdersScreen';
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation }) {
   const menuItems = [
-    { title: 'Orders', onPress: () => {} },
-    { title: 'Wishlist', onPress: () => {} },
+    {
+      title: 'Orders',
+      onPress: () => navigation.navigate('PreviousOrdersScreen') // Navigate to PreviousOrdersScreen
+    },
+    {
+      title: 'Wishlist',
+      onPress: () => navigation.navigate('Wishlist') // Navigate to WishlistScreen
+    },
     { title: 'Coupons', onPress: () => {} },
-    { title: 'Helpline', onPress: () => {} },
+    {
+      title: 'Helpline',
+      onPress: () => navigation.navigate('ContactUs') // Navigate to ContactUsScreen
+    },
   ];
 
   const recentSellers = [
@@ -29,7 +39,7 @@ export default function ProfileScreen() {
           userType="Consumer"
           onEdit={() => {}}
         />
-        <ProfileMenu items={menuItems} />
+        <ProfileMenu items={menuItems} navigation={navigation} />
         <RecentlyViewed sellers={recentSellers} />
       </ScrollView>
     </SafeAreaView>
