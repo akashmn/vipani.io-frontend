@@ -13,8 +13,6 @@ import ContactUsScreen from './screens/ContactUsScreen';
 import PreviousOrdersScreen from './screens/PreviousOrdersScreen';
 import WishlistScreen from './screens/WishlistScreen';
 import ChatScreen from './screens/ChatScreen';
-
-// level 0 pages
 import SellerScreen from './screens/SellerScreen';
 
 const Tab = createBottomTabNavigator();
@@ -63,7 +61,6 @@ export default function App() {
         <Tab.Screen name="PreviousOrders" component={PreviousOrdersScreen} options={{ tabBarButton: () => null }} />
         <Tab.Screen name="Wishlist" component={WishlistScreen} options={{ tabBarButton: () => null }}  />
         <Tab.Screen name='SellerScreen' component={SellerScreen} options={{ tabBarButton: () => null }}/>
-
       </Tab.Navigator>
     </NavigationContainer>
   );
