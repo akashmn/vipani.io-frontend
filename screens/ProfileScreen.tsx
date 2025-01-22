@@ -9,8 +9,8 @@ import PreviousOrdersScreen from './PreviousOrdersScreen';
 export default function ProfileScreen({ navigation }) {
   const menuItems = [
     {
-      title: 'Orders',
-      onPress: () => navigation.navigate('PreviousOrdersScreen') // Navigate to PreviousOrdersScreen
+      title: 'PreviousOrders',
+      onPress: () => navigation.navigate('PreviousOrders') // Navigate to PreviousOrdersScreen
     },
     {
       title: 'Wishlist',

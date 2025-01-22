@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
+
+// main
 import HomeScreen from './screens/HomeScreen';
 import CommunityScreen from './screens/CommunityScreen';
 import InboxScreen from './screens/InboxScreen';
@@ -11,6 +13,9 @@ import ContactUsScreen from './screens/ContactUsScreen';
 import PreviousOrdersScreen from './screens/PreviousOrdersScreen';
 import WishlistScreen from './screens/WishlistScreen';
 import ChatScreen from './screens/ChatScreen';
+
+// level 0 pages
+import SellerScreen from './screens/SellerScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -55,8 +60,10 @@ export default function App() {
         <Tab.Screen name="Profile" component={ProfileScreen} />
         <Tab.Screen name="Cart" component={CartScreen} />
         <Tab.Screen name="ContactUs" component={ContactUsScreen} options={{ tabBarButton: () => null }} />
-        <Tab.Screen name="Orders" component={PreviousOrdersScreen} options={{ tabBarButton: () => null }} />
+        <Tab.Screen name="PreviousOrders" component={PreviousOrdersScreen} options={{ tabBarButton: () => null }} />
         <Tab.Screen name="Wishlist" component={WishlistScreen} options={{ tabBarButton: () => null }}  />
+        <Tab.Screen name='SellerScreen' component={SellerScreen} options={{ tabBarButton: () => null }}/>
+
       </Tab.Navigator>
     </NavigationContainer>
   );
