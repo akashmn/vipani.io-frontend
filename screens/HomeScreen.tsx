@@ -123,6 +123,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 16,
     borderWidth: 1,
-    elevation: 2,
+    // elevation: 2,
   },
 });
