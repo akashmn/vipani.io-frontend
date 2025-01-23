@@ -1,9 +1,19 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function HomeScreen() {
+
+  const navigation = useNavigation();
+
+  // Function to handle navigation
+  const handleBannerPress = () => {
+    navigation.navigate('BannerListingScreen');
+  };
+
   
   return (
     <SafeAreaView style={styles.container}>
@@ -11,7 +21,7 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>hello,</Text>
-            <Text style={styles.name}>stephy sam</Text>
+            <Text style={styles.name}>Akash M Nandan</Text>
           </View>
           <View style={styles.searchIcon}>
             <Ionicons name="search" size={24} color="black" />
@@ -21,11 +31,25 @@ export default function HomeScreen() {
         <View style={styles.bannerContainer}>
           <Text style={styles.sectionTitle}>banners/offers</Text>
           <ScrollView style={styles.bannerSection} horizontal showsHorizontalScrollIndicator={true}>
-            <Image style={styles.banner} source={require('../static/images/image1.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image2.jpg')} />
-            <Image style={styles.banner} source={require('../static/images/image3.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image4.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image5.jpg')} />
+             <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image1.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image2.jpg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image3.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image4.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image5.jpg')} />
+        </TouchableOpacity>
           </ScrollView>
         </View>
 

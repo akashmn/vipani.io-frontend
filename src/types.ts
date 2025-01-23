@@ -6,6 +6,7 @@ export type RootStackParamList = {
   Cart: undefined;
   ContactUs: undefined;
   Chat: { seller: Seller };
+  BannerListingScreen: undefined;
 };
 
 export type Seller = {
