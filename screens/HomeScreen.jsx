@@ -14,6 +14,10 @@ export default function HomeScreen() {
     navigation.navigate('BannerListingScreen');
   };
 
+  const handleCategoriesPress = () => {
+    navigation.navigate('CategoriesListingScreen');
+  };
+
   
   return (
     <SafeAreaView style={styles.container}>
@@ -56,14 +60,37 @@ export default function HomeScreen() {
         <View style={styles.categoriesContainer}>
           <Text style={styles.sectionTitle}>categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat1.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat2.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat3.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat4.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat5.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat6.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat7.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat8.jpeg')} />
+          </TouchableOpacity>
           </ScrollView>
         </View>
 
