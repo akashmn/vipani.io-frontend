@@ -18,6 +18,10 @@ export default function HomeScreen() {
     navigation.navigate('CategoriesListingScreen');
   };
 
+  const handleSearchPress = () => {
+    navigation.navigate('HomeSearchScreen');
+  };
+
   
   return (
     <SafeAreaView style={styles.container}>
@@ -27,9 +31,9 @@ export default function HomeScreen() {
             <Text style={styles.greeting}>hello,</Text>
             <Text style={styles.name}>Akash M Nandan</Text>
           </View>
-          <View style={styles.searchIcon}>
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
             <Ionicons name="search" size={24} color="black" />
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.bannerContainer}>

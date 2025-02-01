@@ -17,6 +17,7 @@ import ChatScreen from './screens/ChatScreen';
 import SellerScreen from './screens/SellerScreen';
 import CategoriesListingScreen from './screens/CategoriesListingScreen';
 import BannerListingScreen from './screens/BannerListingScreen';
+import HomeSearchScreen from './screens/HomeSearchScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -75,6 +76,7 @@ export default function App() {
           <Tab.Screen name="SellerScreen" component={SellerScreen} options={{ tabBarButton: () => null }} />
           <Tab.Screen name="CategoriesListingScreen" component={CategoriesListingScreen} options={{ tabBarButton: () => null }} />
           <Tab.Screen name="BannerListingScreen" component={BannerListingScreen} options={{ tabBarButton: () => null }} />
+          <Tab.Screen name="HomeSearchScreen" component={HomeSearchScreen} options={{ tabBarButton: () => null }} />
         </Tab.Navigator>
       )}
     </NavigationContainer>
