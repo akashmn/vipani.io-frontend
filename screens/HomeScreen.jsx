@@ -14,6 +14,14 @@ export default function HomeScreen() {
     navigation.navigate('BannerListingScreen');
   };
 
+  const handleCategoriesPress = () => {
+    navigation.navigate('CategoriesListingScreen');
+  };
+
+  const handleSearchPress = () => {
+    navigation.navigate('HomeSearchScreen');
+  };
+
   
   return (
     <SafeAreaView style={styles.container}>
@@ -23,9 +31,9 @@ export default function HomeScreen() {
             <Text style={styles.greeting}>hello,</Text>
             <Text style={styles.name}>Akash M Nandan</Text>
           </View>
-          <View style={styles.searchIcon}>
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
             <Ionicons name="search" size={24} color="black" />
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.bannerContainer}>
@@ -56,14 +64,37 @@ export default function HomeScreen() {
         <View style={styles.categoriesContainer}>
           <Text style={styles.sectionTitle}>categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat1.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat2.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat3.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat4.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat5.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat6.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat7.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat8.jpeg')} />
+          </TouchableOpacity>
           </ScrollView>
         </View>
 
