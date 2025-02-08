@@ -64,6 +64,11 @@ export default function NewSellers() {
     setModalVisible(true);
   };
 
+  const onClose = () => {
+    setModalVisible(false);
+  };
+  
+
   return (
     <View>
       <ScrollView
@@ -87,16 +92,23 @@ export default function NewSellers() {
         animationType="slide"
         transparent={true}
         visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
+        onRequestClose={onClose}
       >
         <View style={styles.modalBackground}>
           <View style={styles.modalContainer}>
             {selectedSeller && (
               <ScrollView>
-                <TouchableOpacity style={styles.button}>
-                <SimpleLineIcons name="user-follow" size={24} color="#fff" />
-                <Text style={styles.buttonText}></Text>
-                </TouchableOpacity>
+                <View style={styles.iconContainer}>
+                  <TouchableOpacity style={styles.button}>
+                  <SimpleLineIcons name="user-follow" size={24} color="#fff" />
+                  <Text style={styles.buttonText}></Text>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+                    <Text style={styles.closeButtonText}>X</Text>
+                  </TouchableOpacity>
+                </View>
+
               <View style={styles.topSection}>
                 <Image
                   source={selectedSeller.image}
@@ -237,7 +249,7 @@ const styles = StyleSheet.create({
   button: {
     position: 'absolute',
     top: 10,
-    right: 10,
+    right: 20,
     backgroundColor: '#5E7EFF',
     padding: 8,
     borderRadius: 10,
@@ -259,4 +271,32 @@ const styles = StyleSheet.create({
     color: '#555',
     marginBottom: 10,
   },
+  closeButton: {
+    position: 'absolute',
+    top: 1,
+    right:5,
+    backgroundColor: '#E5E5E5',
+    padding: 8,
+    borderRadius: 50,
+    height: 30,
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 40,
+  },
+  closeButtonText: {
+    color: '#000',
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    zIndex: 30,
+    gap: 10,
+  },
+  
 });
