@@ -1,9 +1,27 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function HomeScreen() {
+
+  const navigation = useNavigation();
+
+  // Function to handle navigation
+  const handleBannerPress = () => {
+    navigation.navigate('BannerListingScreen');
+  };
+
+  const handleCategoriesPress = () => {
+    navigation.navigate('CategoriesListingScreen');
+  };
+
+  const handleSearchPress = () => {
+    navigation.navigate('HomeSearchScreen');
+  };
+
   
   return (
     <SafeAreaView style={styles.container}>
@@ -11,35 +29,72 @@ export default function HomeScreen() {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>hello,</Text>
-            <Text style={styles.name}>akash m nandan</Text>
+            <Text style={styles.name}>Akash M Nandan</Text>
           </View>
-          <View style={styles.searchIcon}>
+          <TouchableOpacity style={styles.searchIcon} onPress={handleSearchPress}>
             <Ionicons name="search" size={24} color="black" />
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.bannerContainer}>
           <Text style={styles.sectionTitle}>banners/offers</Text>
           <ScrollView style={styles.bannerSection} horizontal showsHorizontalScrollIndicator={true}>
-            <Image style={styles.banner} source={require('../static/images/image1.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image2.jpg')} />
-            <Image style={styles.banner} source={require('../static/images/image3.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image4.jpeg')} />
-            <Image style={styles.banner} source={require('../static/images/image5.jpg')} />
+             <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image1.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image2.jpg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image3.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image4.jpeg')} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={handleBannerPress}>
+          <Image style={styles.banner} source={require('../static/images/image5.jpg')} />
+        </TouchableOpacity>
           </ScrollView>
         </View>
 
         <View style={styles.categoriesContainer}>
           <Text style={styles.sectionTitle}>categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={true}>
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat1.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat2.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat3.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat4.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat5.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat6.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat7.jpeg')} />
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleCategoriesPress}>
             <Image style={styles.categoryCircle} source={require('../static/images/cat8.jpeg')} />
+          </TouchableOpacity>
           </ScrollView>
         </View>
 
@@ -123,6 +178,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 16,
     borderWidth: 1,
-    elevation: 2,
+    // elevation: 2,
   },
 });

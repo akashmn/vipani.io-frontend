@@ -38,6 +38,7 @@ export default function CommunityScreen() {
         <View style={styles.sellersGrid}>
           {sellers.map((seller, index) => (
             <SellerCard
+            key={index}
             name="Prasanth PP"
             product="Spices"
             avatar={require('../static/images/sellerAvatar1.jpeg')}
