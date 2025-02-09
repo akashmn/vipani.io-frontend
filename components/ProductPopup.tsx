@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   modalContainer: {
-    height: height * 0.7,
+    height: height * 0.6,
     backgroundColor: '#fff',
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     pointerEvents: 'auto',
     zIndex: 100,
+    marginTop:10
   },
   topSection: {
     flexDirection: 'row',
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
     marginRight: 10,
+    marginTop:20,
   },
   detailsContainer: {
     flex: 1,
