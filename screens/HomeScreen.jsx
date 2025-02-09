@@ -3,7 +3,8 @@ import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'rea
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-
+import { useState } from 'react';
+import ProductPopup from './../components/ProductPopup';
 
 export default function HomeScreen() {
 
@@ -22,6 +23,45 @@ export default function HomeScreen() {
     navigation.navigate('HomeSearchScreen');
   };
 
+  const [selectedProduct, setSelectedProduct] = useState(null); 
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const newArrivals = [
+    {
+      image: require('../static/images/new1.jpeg'),
+      name: 'Product 1',
+      location: 'Location 1',
+      price: '₹350/-',
+      details: 'Description of product 1.',
+    },
+    {
+      image: require('../static/images/new2.jpeg'),
+      name: 'Product 2',
+      location: 'Location 2',
+      price: '₹400/-',
+      details: 'Description of product 2.',
+    },
+    {
+      image: require('../static/images/new3.jpeg'),
+      name: 'Product 3',
+      location: 'Location 3',
+      price: '₹700/-',
+      details: 'Details about product 3',
+    },
+    {
+      image: require('../static/images/new4.jpeg'),
+      name: 'Product 4',
+      location: 'Location 4',
+      price: '₹900/-',
+      details: 'Details about product 4',
+    },
+   
+  ];
+
+  const handleProductPress = (product) => {
+    setSelectedProduct(product);
+    setModalVisible(true); 
+  };
   
   return (
     <SafeAreaView style={styles.container}>
@@ -101,13 +141,21 @@ export default function HomeScreen() {
         <View style={styles.newArrivalsContainer}>
           <Text style={styles.sectionTitle}>New Arrivals</Text>
           <ScrollView contentContainerStyle={styles.gridContainer}>
-            <Image style={styles.gridItem} source={require('../static/images/new1.jpeg')} />
-            <Image style={styles.gridItem} source={require('../static/images/new2.jpeg')} />
-            <Image style={styles.gridItem} source={require('../static/images/new3.jpeg')} />
-            <Image style={styles.gridItem} source={require('../static/images/new4.jpeg')} />
-          </ScrollView>
-        </View>
+            {newArrivals.map((product, index) => (
+            <TouchableOpacity key={index} onPress={() => handleProductPress(product)}>
+              <Image style={styles.gridItem} source={product.image} />
+            </TouchableOpacity>
+            ))}
+        </ScrollView>
+      </View>
       </ScrollView>
+      {modalVisible && (
+        <ProductPopup
+          visible={modalVisible}
+          product={selectedProduct}
+          onClose={() => setModalVisible(false)} // Close the popup
+        />
+      )}
     </SafeAreaView>
   );
 }
@@ -172,12 +220,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   gridItem: {
-    width: '48%',
+    width: '100%',
+    aspectRatio:1.2,
     height: 150,
     backgroundColor: '#2E8B57',
     borderRadius: 10,
     marginBottom: 16,
     borderWidth: 1,
-    // elevation: 2,
+    elevation: 2,
+    resizeMode:'cover',
+    overflow: 'hidden'
   },
 });
