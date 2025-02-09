@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
   button: {
     position: 'absolute',
     top: 10,
-    right: 20,
+    right: 40,
     backgroundColor: '#5E7EFF',
     padding: 8,
     borderRadius: 10,
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
   closeButton: {
     position: 'absolute',
     top: 1,
-    right:5,
+    right:0,
     backgroundColor: '#E5E5E5',
     padding: 8,
     borderRadius: 50,
